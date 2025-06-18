@@ -7,9 +7,10 @@ from ast import literal_eval
 
 
 def download_wikipedia_data(
-    data_path: str = '../../data/',
+    data_path: str = "../../data/",
     download_path: str = "./",
-    file_name: str = "vector_database_wikipedia_articles_embedded") -> pd.DataFrame:
+    file_name: str = "vector_database_wikipedia_articles_embedded",
+) -> None:
 
     data_url = 'https://cdn.openai.com/API/examples/data/vector_database_wikipedia_articles_embedded.zip'
 
@@ -30,7 +31,7 @@ def download_wikipedia_data(
             zip_ref.extractall(data_path)
 
         # Remove the zip file
-        os.remove('vector_database_wikipedia_articles_embedded.zip')
+        os.remove(zip_file_path)
         print(f"File downloaded to {data_path}")
 
 
